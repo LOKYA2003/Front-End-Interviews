@@ -18,7 +18,6 @@ console.log(user);
 // Delete Property In Objects
 
 delete user.address;
-
 // Not allowed to delete
 
 Object.seal(user);
