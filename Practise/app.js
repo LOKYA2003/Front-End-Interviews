@@ -1,6 +1,11 @@
-//
+// Hoisting In Javascript
 
-// console.log("Server Started");
+// console.log("Script");
+
+// 1. Lexcial
+// 2. Block
+// 3. Global
+// 4. Local
 
 // Javascript bts
 
@@ -16,23 +21,57 @@
 
 // b. Code   Ex Phase
 
-debugger;
+// Lexical Scope
 
-console.log(name);
-myName();
+// function parent() {
+//   const parentName = "Lokesh";
 
-var name = "Lokesh";
-const surname = "Vasnik";
+//   function child() {
+//     const childName = "Bablu";
 
-// Functions
-// a. Declartion 🤚
+//     console.log("My father name is", parentName);
+//   }
 
-function myName() {
-  const free = "Bablu";
+//   child();
+// }
+
+// parent();
+
+// Block Scope
+
+// Var key is function scoped
+// Let & const is a blocked scope
+
+// function myFullName() {
+//   console.log("My name is something");
+//   personName = "Lokesh";
+//   if (true) {
+//     console.log(personName);
+//   }
+// }
+
+// function myFullName() {
+//   console.log("My name is something");
+//   personName = "Lokesh";
+//   if (true) {
+//     console.log(personName);
+//   }
+// }
+
+// myFullName();
+
+// myFullName();
+
+// SetTimeOut & SetInterval
+
+function say() {
+  console.log("Greeting");
 }
 
-// b. Expression 😠
+setTimeout(say, 3000);
 
-const myFullName = function () {
-  console.log("Lokesh Vasnik");
-};
+setTimeout(() => {
+  console.log("Greeting from arrow function");
+}, 4000);
+
+console.log("Script completed");
