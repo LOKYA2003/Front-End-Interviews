@@ -1,77 +1,70 @@
-// Hoisting In Javascript
+// Spread Rest Default Paramters
 
-// console.log("Script");
+// Spread
 
-// 1. Lexcial
-// 2. Block
-// 3. Global
-// 4. Local
+// The spread operator (...) unpacks the elements of an iterable object.
+// The rest parameter (...) packs the elements into an array.
 
-// Javascript bts
+const maleUsersData = [
+  {
+    name: "Tom Cruise",
+    age: 56,
+    "Born At": "Syracuse, NY",
+    Birthdate: "July 3, 1962",
+    photo: "https://jsonformatter.org/img/tom-cruise.jpg",
+  },
+  {
+    name: "Robert Downey Jr.",
+    age: 53,
+    "Born At": "New York City, NY",
+    Birthdate: "April 4, 1965",
+    photo: "https://jsonformatter.org/img/Robert-Downey-Jr.jpg",
+  },
+];
 
-// 1. Global Execution Context 👇
+const femaleUsersData = [
+  {
+    name: "Sonali Cruise",
+    age: 56,
+    "Born At": "Syracuse, NY",
+    Birthdate: "July 3, 1962",
+    photo: "https://jsonformatter.org/img/tom-cruise.jpg",
+  },
+  {
+    name: "Minashi  Jr.",
+    age: 53,
+    "Born At": "New York City, NY",
+    Birthdate: "April 4, 1965",
+    photo: "https://jsonformatter.org/img/Robert-Downey-Jr.jpg",
+  },
+];
 
-// a. Memory Ex Phase
-// var keyword is hoisted 🤚
-// let and const are restricted 😠
+const randomNumbers = [1, 2, 3, 4, 5];
 
-// In function Local scope gets created
-//  a. Memory Ex phase
-//  b. Code Ex phase
+const output = maleUsersData.concat(femaleUsersData);
 
-// b. Code   Ex Phase
+// console.log(output);
 
-// Lexical Scope
+// Spread operator works with Arrays, Objects
 
-// function parent() {
-//   const parentName = "Lokesh";
+const combinedUsers = [...maleUsersData, ...femaleUsersData, ...randomNumbers];
 
-//   function child() {
-//     const childName = "Bablu";
+// console.log(combinedUsers);
 
-//     console.log("My father name is", parentName);
-//   }
+// Rest Operator & Default parameters
 
-//   child();
-// }
+function add(a, b = 1, ...argu) {
+  console.log("The length of other arugments are ", argu.length);
 
-// parent();
-
-// Block Scope
-
-// Var key is function scoped
-// Let & const is a blocked scope
-
-// function myFullName() {
-//   console.log("My name is something");
-//   personName = "Lokesh";
-//   if (true) {
-//     console.log(personName);
-//   }
-// }
-
-// function myFullName() {
-//   console.log("My name is something");
-//   personName = "Lokesh";
-//   if (true) {
-//     console.log(personName);
-//   }
-// }
-
-// myFullName();
-
-// myFullName();
-
-// SetTimeOut & SetInterval
-
-function say() {
-  console.log("Greeting");
+  const output = argu.map((item) => item + 1);
+  return output;
 }
 
-setTimeout(say, 3000);
+function multiy(a, b = 1) {
+  return a + b;
+}
 
-setTimeout(() => {
-  console.log("Greeting from arrow function");
-}, 4000);
+// add(12, 12);
+// console.log(add(12, 12, 12, 12, 12));
 
-console.log("Script completed");
+console.log(multiy(2));
