@@ -1,0 +1,21 @@
+.green {
+  background-color: green;
+  padding: 5rem;
+  width: 200px;
+  height: 200px;
+}
+
+.blue {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink {
+  background-color: pink;
+  width: 100px;
+  height: 100px;
+}
