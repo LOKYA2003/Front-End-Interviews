@@ -12,13 +12,13 @@ main {
   padding: 0 16px 32px;
 }
 
-.heading {
+.title {
   font-size: 64px;
   color: #48a300;
   text-align: center;
 }
 
-.heading span {
+.title span {
   color: #61481c;
 }
 
@@ -60,10 +60,12 @@ main {
   display: flex;
   align-items: center;
   overflow: hidden;
+  transition: width 0.2s ease-in-out;
 }
 
 .progress-value span {
   padding-left: 20px;
+  min-width: max-content;
 }
 
 .error-label {
@@ -144,19 +146,6 @@ main {
 .completed .goal-input {
   color: #48a300;
   text-decoration-line: line-through;
-}
-
-.sun-icon {
-  animation: animName 2s linear infinite;
-}
-
-@keyframes animName {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 @media (max-width: 768px) {
