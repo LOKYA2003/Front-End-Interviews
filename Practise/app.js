@@ -1,70 +1,115 @@
-// Spread Rest Default Paramters
+// Variables and keywords
 
-// Spread
+// let nameOfMe = "Lokesh";
 
-// The spread operator (...) unpacks the elements of an iterable object.
-// The rest parameter (...) packs the elements into an array.
+// const cpu = "Intel Inside";
 
-const maleUsersData = [
-  {
-    name: "Tom Cruise",
-    age: 56,
-    "Born At": "Syracuse, NY",
-    Birthdate: "July 3, 1962",
-    photo: "https://jsonformatter.org/img/tom-cruise.jpg",
-  },
-  {
-    name: "Robert Downey Jr.",
-    age: 53,
-    "Born At": "New York City, NY",
-    Birthdate: "April 4, 1965",
-    photo: "https://jsonformatter.org/img/Robert-Downey-Jr.jpg",
-  },
-];
+// nameOfMe = "Vasnik";
 
-const femaleUsersData = [
-  {
-    name: "Sonali Cruise",
-    age: 56,
-    "Born At": "Syracuse, NY",
-    Birthdate: "July 3, 1962",
-    photo: "https://jsonformatter.org/img/tom-cruise.jpg",
-  },
-  {
-    name: "Minashi  Jr.",
-    age: 53,
-    "Born At": "New York City, NY",
-    Birthdate: "April 4, 1965",
-    photo: "https://jsonformatter.org/img/Robert-Downey-Jr.jpg",
-  },
-];
+// cpu = "Vasnik";
 
-const randomNumbers = [1, 2, 3, 4, 5];
+// console.log(nameOfMe);
 
-const output = maleUsersData.concat(femaleUsersData);
+// console.log(cpu);
 
-// console.log(output);
+// Scope Hoisting
 
-// Spread operator works with Arrays, Objects
+// // debugger;
+// console.log(calender);
+// // const calender = "March";
+// var calender = "March";
 
-const combinedUsers = [...maleUsersData, ...femaleUsersData, ...randomNumbers];
+// console.log(helloMyName());
 
-// console.log(combinedUsers);
+// function helloMyName(params) {
+//   console.log("Helo world");
+// }
 
-// Rest Operator & Default parameters
+// In depth of scopes in javascript
+//    a. Block
+//    b. Function
+//    c. Lexical Scope
+//    d. Global
 
-function add(a, b = 1, ...argu) {
-  console.log("The length of other arugments are ", argu.length);
+// Block scope
 
-  const output = argu.map((item) => item + 1);
-  return output;
-}
+// if (true) {
+//   if (true) {
+//     let blockVar = "lokesh";
+//   }
+//   console.log(blockVar);
+// }
 
-function multiy(a, b = 1) {
+// Function Scope
+// function myName(params) {
+//   if (true) {
+//     var bablu = "Lokesh";
+//   }
+
+//   console.log(bablu);
+// }
+
+// myName();
+
+// Functions
+
+// 1.  High order function
+// 2. Expression function
+// 3. Declartion function
+
+// Declartion function
+
+// console.log(add(12, 12));
+function add(a, b) {
   return a + b;
 }
 
-// add(12, 12);
-// console.log(add(12, 12, 12, 12, 12));
+// Expression function
+const sub = function (a, b) {
+  return a - b;
+};
 
-console.log(multiy(2));
+// console.log(sub(12, 1));
+
+// Expression arrow function
+
+const mul = (a, b) => a * b;
+
+// console.log(mul(12, 12));
+
+// High Order Function
+
+// setInterval(() => {
+//   console.log(mul(12, 12));
+// }, 2000);
+
+// const arr = [23, 12, 45, 121];
+
+// arr.map((item) => console.log(item));
+
+const button = document.querySelector(".btn");
+const image = document.querySelector(".img");
+const reloadEventHandler = () => {
+  window.location.reload();
+};
+
+// Ajax javascript
+
+// Json object
+
+// setInterval(() => {
+//   console.log("I am not disturbing your code");
+// }, 2000);
+
+// console.log("helo world");
+
+const imageUrlGenerator = () => {
+  fetch("https://dog.ceo/api/breeds/image/random")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.message);
+      image.src = data.message;
+    });
+};
+
+button.addEventListener("click", imageUrlGenerator);
