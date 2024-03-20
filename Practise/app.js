@@ -1,115 +1,92 @@
-// Variables and keywords
+// Ajax
 
-// let nameOfMe = "Lokesh";
+// setTimeout(() => {
+//   console.log("Helo world this is em");
+// }, 2000);
 
-// const cpu = "Intel Inside";
+// setInterval(() => {
+//   console.log("Helo world");
+// }, 2000);
 
-// nameOfMe = "Vasnik";
+const url = "https://dog.ceo/api/breeds/image/random";
+// let output = fetch("https://dog.ceo/api/breeds/image/random")
+//   .then((resp) => resp.json())
+//   .then((data) => console.log(data));
 
-// cpu = "Vasnik";
+// async function fetchDogApi(url) {
+//   const resp = await fetch(url);
 
-// console.log(nameOfMe);
+//   const data = await resp.json();
 
-// console.log(cpu);
+//   console.log(data);
+// }
 
-// Scope Hoisting
+// fetchDogApi(url);
 
-// // debugger;
-// console.log(calender);
-// // const calender = "March";
-// var calender = "March";
+// // console.log(output);
+// console.log("Helo world");
 
-// console.log(helloMyName());
+// console.log("Hleo lokesh");
 
-// function helloMyName(params) {
+// Execution context api
+
+// 1. Memory exe phase
+
+// 2. Code exe
+
+// Functions var = code, undefined
+
+// value dekhti hai
+
+// Sceninaroi 1
+// console.log(myName);
+
+var myName = "Lokesh";
+
+// Secnario 2
+
+// console.log(myName);
+
+// let myName = "Lokesh";
+// hello();
+
+// // Declaartion function
+// function hello(params) {
 //   console.log("Helo world");
 // }
 
-// In depth of scopes in javascript
-//    a. Block
-//    b. Function
-//    c. Lexical Scope
-//    d. Global
+// // Expression functions
 
-// Block scope
+// const hellworld = function () {
+//   console.log("Helo word from exp function");
+// };
 
-// if (true) {
-//   if (true) {
-//     let blockVar = "lokesh";
-//   }
-//   console.log(blockVar);
-// }
-
-// Function Scope
-// function myName(params) {
-//   if (true) {
-//     var bablu = "Lokesh";
-//   }
-
-//   console.log(bablu);
-// }
-
-// myName();
-
-// Functions
-
-// 1.  High order function
-// 2. Expression function
-// 3. Declartion function
-
-// Declartion function
-
-// console.log(add(12, 12));
-function add(a, b) {
-  return a + b;
-}
-
-// Expression function
-const sub = function (a, b) {
-  return a - b;
-};
-
-// console.log(sub(12, 1));
-
-// Expression arrow function
-
-const mul = (a, b) => a * b;
-
-// console.log(mul(12, 12));
-
-// High Order Function
-
-// setInterval(() => {
-//   console.log(mul(12, 12));
-// }, 2000);
-
-// const arr = [23, 12, 45, 121];
-
-// arr.map((item) => console.log(item));
+// High order functions
 
 const button = document.querySelector(".btn");
-const image = document.querySelector(".img");
-const reloadEventHandler = () => {
-  window.location.reload();
-};
 
-// Ajax javascript
+function onClickFn(params) {
+  console.log("hleo button");
+}
+button.addEventListener("click", onClickFn);
 
-// Json object
+const maleUsersData = [
+  {
+    name: "Tom Cruise",
+    age: 56,
+    "Born At": "Syracuse, NY",
+    Birthdate: "July 3, 1962",
+    photo: "https://jsonformatter.org/img/tom-cruise.jpg",
+  },
+  {
+    name: "Robert Downey Jr.",
+    age: 53,
+    "Born At": "New York City, NY",
+    Birthdate: "April 4, 1965",
+    photo: "https://jsonformatter.org/img/Robert-Downey-Jr.jpg",
+  },
+];
 
-// setInterval(() => {
-//   console.log("I am not disturbing your code");
-// }, 2000);
-
-// console.log("helo world");
-
-const imageUrlGenerator = () => {
-  fetch("https://dog.ceo/api/breeds/image/random")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.message);
-      image.src = data.message;
-    });
-};
-
-button.addEventListener("click", imageUrlGenerator);
+// maleUsersData.map((item) => {
+//   console.log("Give me age", item.Birthdate);
+// });
