@@ -374,3 +374,9 @@ console.log(multiy(2));
 // };
 
 // button.addEventListener("click", imageUrlGenerator);
+
+/*
+Life is destined so it is 100% true. You can be hiding under the bed and your man will find you. You definitely do not need to search. The Universe has it all figured out. Enjoy your simulation. There is nothing you can do to change it.
+
+PS. What you want is not necessarily what the Universe has planned for you. It knows better. Trust in its wisdom.
+*/
